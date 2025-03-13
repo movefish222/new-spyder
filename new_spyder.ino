@@ -144,7 +144,7 @@ void loop()
           return;
         }
         status[0] = false; 
-        dump_byte_array(yuyin_ruijin, 7);
+        dump_byte_array(yuyin_yanan, 7);
         digitalWrite(LED, HIGH);//打开LED
         delay(500);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
@@ -165,7 +165,7 @@ void loop()
           return;
         }
         status[1] = false;
-        dump_byte_array(yuyin_tupodisandaofangxian, 7);
+        dump_byte_array(yuyin_yanan, 7);
         digitalWrite(LED, HIGH);//打开LED
         delay(500);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
@@ -186,7 +186,7 @@ void loop()
           return;
         }
         status[2] = false;
-        dump_byte_array(yuyin_xuezhanxiangjiang, 7);
+        dump_byte_array(yuyin_yanan, 7);
         digitalWrite(LED, HIGH);//打开LED
         delay(500);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
@@ -204,7 +204,7 @@ void loop()
       {
         if(!status[4]) return;
         status[4] = false;
-        dump_byte_array(yuyin_zhanlingzunyi, 7);
+        dump_byte_array(yuyin_yanan, 7);
         digitalWrite(LED, HIGH);//打开LED
         delay(500);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
@@ -222,7 +222,7 @@ void loop()
       {
         if(!status[6]) return;
         status[6] = false;
-        dump_byte_array(yuyin_qiaodujinshajiang, 7);
+        dump_byte_array(yuyin_yanan, 7);
         digitalWrite(LED, HIGH);//打开LED
         delay(500);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
@@ -240,7 +240,7 @@ void loop()
       {
         if(!status[8]) return;
         status[8] = false;
-        dump_byte_array(yuyin_feiduoludingqiao, 7);
+        dump_byte_array(yuyin_yanan, 7);
         digitalWrite(LED, HIGH);//打开LED
         delay(500);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
@@ -258,7 +258,7 @@ void loop()
       {
         if(!status[9]) return;
         status[9] = false;
-        dump_byte_array(yuyin_paxueshan, 7);
+        dump_byte_array(yuyin_yanan, 7);
         digitalWrite(LED, HIGH);//打开LED
         delay(500);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
