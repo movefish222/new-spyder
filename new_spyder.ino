@@ -24,6 +24,9 @@
 #include<SoftwareSerial.h>
 #include"yvyin.h"
 #include"duka.h"
+
+//TODO:省赛前git测试点
+
 SoftwareSerial softSerial1(5,4); //软串口 rx:5 tx:4
 
 //读卡器自动读数据模式
