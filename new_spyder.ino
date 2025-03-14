@@ -151,7 +151,7 @@ void loop()
         status[0] = false; 
         dump_byte_array(yuyin_ruijin, 7);
         
-        return;
+        
         }
                  
     //突破第三道封锁线
@@ -170,7 +170,7 @@ void loop()
         status[1] = false;
         dump_byte_array(yuyin_tupodisandaofangxian, 7);
         
-        return;
+        
         }
         
     //血战湘江
@@ -189,7 +189,7 @@ void loop()
         status[2] = false;
         dump_byte_array(yuyin_xuezhanxiangjiang, 7);
         
-        return;
+        
         } 
     //占领遵义
     count = 0;
@@ -205,7 +205,7 @@ void loop()
         status[4] = false;
         dump_byte_array(yuyin_zhanlingzunyi, 7);
         
-        return;
+        
         }
     //巧渡金沙江
     count = 0;
@@ -221,7 +221,7 @@ void loop()
         status[6] = false;
         dump_byte_array(yuyin_qiaodujinshajiang, 7);
         
-        return;
+        
         }
     //飞夺泸定桥
     count = 0;
@@ -237,7 +237,7 @@ void loop()
         status[8] = false;
         dump_byte_array(yuyin_feiduoludingqiao, 7);
         
-        return;
+        
         }
     //爬雪山
     count = 0;
@@ -253,7 +253,7 @@ void loop()
         status[9] = false;
         dump_byte_array(yuyin_paxueshan, 7);
         
-        return;
+        
         }
     //过草地
     count = 0;
@@ -269,7 +269,7 @@ void loop()
         status[11] = false;
         dump_byte_array(yuyin_guocaodi, 7);
         
-        return;
+        
         }
     //会宁大会师
     count = 0;
@@ -285,7 +285,7 @@ void loop()
         status[13] = false;
         dump_byte_array(yuyin_huiningdahuishi, 7);
         
-        return;
+        
         }
     //延安
     count = 0;
@@ -301,7 +301,7 @@ void loop()
         status[15] = false;
         dump_byte_array(yuyin_yanan, 7);
         
-        return;
+        
       }
     if(isDetect){
       digitalWrite(LED, HIGH);
