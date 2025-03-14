@@ -22,6 +22,9 @@
  */
 #define LED 2   // LED引脚配置
 #include<SoftwareSerial.h>
+
+//TODO:出场默认但是初赛点
+
 SoftwareSerial softSerial1(5,4); //软串口 rx:5 tx:4
 
 //读卡器自动读数据模式
