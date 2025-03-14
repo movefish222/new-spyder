@@ -53,7 +53,7 @@ byte yuyin_voiceSetting[] = {
  * 初始化函数
  */
 const int IN1 = 9, IN2 = 10, STBY = 11, PWM = 8;
-bool status[16];
+bool status[20];
 void setup() 
 {
     for(int i = 0; i < 16; i++){
@@ -324,16 +324,16 @@ void loop()
     //会宁大会师
     count = 0;
     for (byte i = 0; i < 16; i++) {
-        if(ReceiveData[i+11] == huiningdahuishi[i])
+        if(ReceiveData[i+11] == siduchishui[i])
         {
           count++;          
           }       
         } 
     if(count==16)
       {
-        if(!status[13]) return;
+        if(!status[19]) return;
         status[13] = false;
-        dump_byte_array(yuyin_huiningdahuishi, 7);
+        dump_byte_array(yuyin_yanan, 7);
         digitalWrite(LED, HIGH);//打开LED
         delay(500);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
