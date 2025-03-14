@@ -303,42 +303,24 @@ void loop()
         digitalWrite(LED, LOW);
         return;
         }
-    //会宁大会师
-    count = 0;
-    for (byte i = 0; i < 16; i++) {
-        if(ReceiveData[i+11] == huiningdahuishi[i])
-        {
-          count++;          
-          }       
-        } 
-    if(count==16)
-      {
-        if(!status[13]) return;
-        status[13] = false;
-        dump_byte_array(yuyin_huiningdahuishi, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
-        return;
-        }
-    //会宁大会师
-    count = 0;
-    for (byte i = 0; i < 16; i++) {
-        if(ReceiveData[i+11] == siduchishui[i])
-        {
-          count++;          
-          }       
-        } 
-    if(count==16)
-      {
-        if(!status[19]) return;
-        status[13] = false;
-        dump_byte_array(yuyin_yanan, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
-        return;
-        }
+    // //会宁大会师
+    // count = 0;
+    // for (byte i = 0; i < 16; i++) {
+    //     if(ReceiveData[i+11] == huiningdahuishi[i])
+    //     {
+    //       count++;          
+    //       }       
+    //     } 
+    // if(count==16)
+    //   {
+    //     if(!status[13]) return;
+    //     status[13] = false;
+    //     dump_byte_array(yuyin_huiningdahuishi, 7);
+    //     digitalWrite(LED, HIGH);//打开LED
+    //     delay(500);  //延时时间需要适当修改
+    //     digitalWrite(LED, LOW);
+    //     return;
+    //     }    
     if(isDetect){
       digitalWrite(LED, HIGH);
       delay(2000);  //亮灯500毫秒，延时时间需要适当修改
