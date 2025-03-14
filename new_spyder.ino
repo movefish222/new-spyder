@@ -70,7 +70,7 @@ void setup()
     //while (!Serial);    // 等待打开串口
     
    //初始化软串口通信；
-   softSerial1.begin(9600);     
+   softSerial1.begin(115200);     
    //监听软串口通信
    softSerial1.listen();
    delay(30);
@@ -133,6 +133,24 @@ void loop()
   }
 
     //判断从标签里读到的信息是什么
+    //延安
+    count = 0;
+    for (byte i = 0; i < 16; i++) {
+        if(ReceiveData[i+11] == yanan[i])
+        {
+          count++;          
+          }      
+        }
+    if(count==16)
+      {
+        if(!status[15]) return;
+        status[15] = false;
+        dump_byte_array(yuyin_yanan, 7);
+        digitalWrite(LED, HIGH);//打开LED
+        delay(500);  //延时时间需要适当修改
+        digitalWrite(LED, LOW);
+        return;
+      }
     //瑞金
     count = 0;
     for (byte i = 0; i < 16; i++) {
@@ -303,24 +321,6 @@ void loop()
         digitalWrite(LED, LOW);
         return;
         }
-    //延安
-    count = 0;
-    for (byte i = 0; i < 16; i++) {
-        if(ReceiveData[i+11] == yanan[i])
-        {
-          count++;          
-          }      
-        }
-    if(count==16)
-      {
-        if(!status[15]) return;
-        status[15] = false;
-        dump_byte_array(yuyin_yanan, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
-        return;
-      }
     if(isDetect){
       digitalWrite(LED, HIGH);
       delay(2000);  //亮灯500毫秒，延时时间需要适当修改
