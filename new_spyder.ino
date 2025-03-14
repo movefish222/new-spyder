@@ -323,7 +323,7 @@ void loop()
       }
     if(isDetect){
       digitalWrite(LED, HIGH);
-      delay(500);  //亮灯500毫秒，延时时间需要适当修改
+      delay(2000);  //亮灯500毫秒，延时时间需要适当修改
       digitalWrite(LED, LOW);//关闭LED 
     }
     digitalWrite(13, LOW); 
