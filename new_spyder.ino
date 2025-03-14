@@ -72,7 +72,7 @@ void setup()
     //while (!Serial);    // 等待打开串口
     
    //初始化软串口通信；
-   softSerial1.begin(9600);     
+   softSerial1.begin(115200);     
    //监听软串口通信
    softSerial1.listen();
    delay(30);
@@ -305,7 +305,7 @@ void loop()
       }
     if(isDetect){
       digitalWrite(LED, HIGH);
-      delay(2000);  //亮灯500毫秒，延时时间需要适当修改
+      delay(500);  //亮灯500毫秒，延时时间需要适当修改
       digitalWrite(LED, LOW);//关闭LED 
     }
     digitalWrite(13, LOW); 
