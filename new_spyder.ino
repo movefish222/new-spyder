@@ -27,6 +27,7 @@
 
 //TODO:省赛前git测试点
 //TODO:仿前1
+//TODO:仿前2
 
 SoftwareSerial softSerial1(5,4); //软串口 rx:5 tx:4
 
