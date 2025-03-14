@@ -150,9 +150,7 @@ void loop()
         }
         status[0] = false; 
         dump_byte_array(yuyin_ruijin, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
+        
         return;
         }
                  
@@ -171,9 +169,7 @@ void loop()
         }
         status[1] = false;
         dump_byte_array(yuyin_tupodisandaofangxian, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
+        
         return;
         }
         
@@ -192,9 +188,7 @@ void loop()
         }
         status[2] = false;
         dump_byte_array(yuyin_xuezhanxiangjiang, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
+        
         return;
         } 
     //占领遵义
@@ -210,9 +204,7 @@ void loop()
         if(!status[4]) return;
         status[4] = false;
         dump_byte_array(yuyin_zhanlingzunyi, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
+        
         return;
         }
     //巧渡金沙江
@@ -228,9 +220,7 @@ void loop()
         if(!status[6]) return;
         status[6] = false;
         dump_byte_array(yuyin_qiaodujinshajiang, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
+        
         return;
         }
     //飞夺泸定桥
@@ -246,9 +236,7 @@ void loop()
         if(!status[8]) return;
         status[8] = false;
         dump_byte_array(yuyin_feiduoludingqiao, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
+        
         return;
         }
     //爬雪山
@@ -264,9 +252,7 @@ void loop()
         if(!status[9]) return;
         status[9] = false;
         dump_byte_array(yuyin_paxueshan, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
+        
         return;
         }
     //过草地
@@ -282,9 +268,7 @@ void loop()
         if(!status[11]) return;
         status[11] = false;
         dump_byte_array(yuyin_guocaodi, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
+        
         return;
         }
     //会宁大会师
@@ -300,9 +284,7 @@ void loop()
         if(!status[13]) return;
         status[13] = false;
         dump_byte_array(yuyin_huiningdahuishi, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
+        
         return;
         }
     //延安
@@ -318,9 +300,7 @@ void loop()
         if(!status[15]) return;
         status[15] = false;
         dump_byte_array(yuyin_yanan, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
+        
         return;
       }
     if(isDetect){
