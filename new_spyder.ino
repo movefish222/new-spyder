@@ -22,6 +22,10 @@
  */
 #define LED 2   // LED引脚配置
 #include<SoftwareSerial.h>
+#include"duka.h"
+#include"yvyin.h"
+
+//TODO:猜想1,谁放最后谁不响
 SoftwareSerial softSerial1(5,4); //软串口 rx:5 tx:4
 
 //读卡器自动读数据模式
@@ -65,7 +69,7 @@ void setup()
     //while (!Serial);    // 等待打开串口
     
    //初始化软串口通信；
-   softSerial1.begin(9600);     
+   softSerial1.begin(115200);     
    //监听软串口通信
    softSerial1.listen();
    delay(30);
@@ -441,7 +445,7 @@ void loop()
       }
     if(isDetect){
       digitalWrite(LED, HIGH);
-      delay(500);  //亮灯500毫秒，延时时间需要适当修改
+      delay(2000);  //亮灯500毫秒，延时时间需要适当修改
       digitalWrite(LED, LOW);//关闭LED 
     }
     digitalWrite(13, LOW); 
