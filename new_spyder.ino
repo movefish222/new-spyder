@@ -142,9 +142,7 @@ void loop()
         }
     if(count==16)
       {
-        if(!status[0]){
-          return;
-        }
+        if(!status[0]) return;
         status[0] = false; 
         dump_byte_array(yuyin_ruijin, 7);
         digitalWrite(LED, HIGH);//打开LED
@@ -163,9 +161,7 @@ void loop()
         } 
     if(count==16)
       {
-        if(!status[1]){
-          return;
-        }
+        if(!status[1]) return;
         status[1] = false;
         dump_byte_array(yuyin_tupodisandaofangxian, 7);
         digitalWrite(LED, HIGH);//打开LED
@@ -184,9 +180,7 @@ void loop()
         } 
     if(count==16)
       {
-        if(!status[2]){
-          return;
-        }
+        if(!status[2]) return;
         status[2] = false;
         dump_byte_array(yuyin_xuezhanxiangjiang, 7);
         digitalWrite(LED, HIGH);//打开LED
@@ -205,9 +199,7 @@ void loop()
         } 
     if(count==16)
       {
-        if(!status[3]){
-          return;
-        }
+        if(!status[3]) return;
         status[3] = false;
         dump_byte_array(yuyin_qiangduwujiang, 7);
         digitalWrite(LED, HIGH);//打开LED
