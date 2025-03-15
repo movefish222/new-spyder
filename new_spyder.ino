@@ -189,25 +189,6 @@ void loop()
         return;
         }
         
-    //强渡乌江
-    count = 0;
-    for (byte i = 0; i < 16; i++) {
-        if(ReceiveData[i+11] == qiangduwujiang[i])
-        {
-          count++;          
-          }       
-        } 
-    if(count==16)
-      {
-        if(!status[3]) return;
-        status[3] = false;
-        dump_byte_array(yuyin_qiangduwujiang, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
-        return;
-        }
-        
     //占领遵义
     count = 0;
     for (byte i = 0; i < 16; i++) {
@@ -226,26 +207,6 @@ void loop()
         digitalWrite(LED, LOW);
         return;
         }
-        
-    //四渡赤水
-    count = 0;
-    for (byte i = 0; i < 16; i++) {
-        if(ReceiveData[i+11] == siduchishui[i])
-        {
-          count++;          
-          }       
-        } 
-    if(count==16)
-      {
-        if(!status[5]) return;
-        status[5] = false;
-        dump_byte_array(yuyin_siduchishui, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
-        return;
-        }
-        
     //巧渡金沙江
     count = 0;
     for (byte i = 0; i < 16; i++) {
@@ -259,25 +220,6 @@ void loop()
         if(!status[6]) return;
         status[6] = false;
         dump_byte_array(yuyin_qiaodujinshajiang, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
-        return;
-        }
-        
-    //强渡大渡河
-    count = 0;
-    for (byte i = 0; i < 16; i++) {
-        if(ReceiveData[i+11] == qiangdudaduhe[i])
-        {
-          count++;          
-          }       
-        } 
-    if(count==16)
-      {
-        if(!status[7]) return;
-        status[7] = false;
-        dump_byte_array(yuyin_qiangdudaduhe, 7);
         digitalWrite(LED, HIGH);//打开LED
         delay(500);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
@@ -321,26 +263,7 @@ void loop()
         digitalWrite(LED, LOW);
         return;
         }
-            
-    //懋功会师
-    count = 0;
-    for (byte i = 0; i < 16; i++) {
-        if(ReceiveData[i+11] == maogonghuishi[i])
-        {
-          count++;          
-          }       
-        } 
-    if(count==16)
-      {
-        if(!status[10]) return;
-        status[10] = false;  
-        dump_byte_array(yuyin_maogonghuishi, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
-        return;
-        }
-            
+
     //过草地
     count = 0;
     for (byte i = 0; i < 16; i++) {
@@ -360,25 +283,6 @@ void loop()
         return;
         }
 
-    //激战腊子口
-    count = 0;
-    for (byte i = 0; i < 16; i++) {
-        if(ReceiveData[i+11] == jizhanlazikou[i])
-        {
-          count++;          
-          }       
-        } 
-    if(count==16)
-      {
-        if(!status[12]) return;
-        status[12] = false;
-        dump_byte_array(yuyin_jizhanlazikou, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
-        return;
-        }
-            
     //会宁大会师
     count = 0;
     for (byte i = 0; i < 16; i++) {
@@ -397,26 +301,7 @@ void loop()
         digitalWrite(LED, LOW);
         return;
         }
-            
-    //吴起镇会议
-    count = 0;
-    for (byte i = 0; i < 16; i++) {
-        if(ReceiveData[i+11] == wuqizhenhuiyi[i])
-        {
-          count++;          
-          }       
-        } 
-    if(count==16)
-      {
-        if(!status[14]) return;
-        status[14] = false;
-        dump_byte_array(yuyin_wuqizhenhuiyi, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
-        return;
-        }
-            
+
     //延安
     count = 0;
     for (byte i = 0; i < 16; i++) {
@@ -435,6 +320,101 @@ void loop()
         digitalWrite(LED, LOW);
         return;
       }
+      
+      //强渡乌江
+    count = 0;
+    for (byte i = 0; i < 16; i++) {
+        if(ReceiveData[i+11] == qiangduwujiang[i])
+        {
+          count++;          
+          }       
+        } 
+    if(count==16)
+      {
+        if(!status[3]) return;
+        status[3] = false;
+        dump_byte_array(yuyin_qiangduwujiang, 7);
+        digitalWrite(LED, HIGH);//打开LED
+        delay(500);  //延时时间需要适当修改
+        digitalWrite(LED, LOW);
+        return;
+        }
+    //四渡赤水
+    count = 0;
+    for (byte i = 0; i < 16; i++) {
+        if(ReceiveData[i+11] == siduchishui[i])
+        {
+          count++;          
+          }       
+        } 
+    if(count==16)
+      {
+        if(!status[5]) return;
+        status[5] = false;
+        dump_byte_array(yuyin_siduchishui, 7);
+        digitalWrite(LED, HIGH);//打开LED
+        delay(500);  //延时时间需要适当修改
+        digitalWrite(LED, LOW);
+        return;
+        }
+            
+    //强渡大渡河
+    count = 0;
+    for (byte i = 0; i < 16; i++) {
+        if(ReceiveData[i+11] == qiangdudaduhe[i])
+        {
+          count++;          
+          }       
+        } 
+    if(count==16)
+      {
+        if(!status[7]) return;
+        status[7] = false;
+        dump_byte_array(yuyin_qiangdudaduhe, 7);
+        digitalWrite(LED, HIGH);//打开LED
+        delay(500);  //延时时间需要适当修改
+        digitalWrite(LED, LOW);
+        return;
+        }
+    
+    //懋功会师
+    count = 0;
+    for (byte i = 0; i < 16; i++) {
+        if(ReceiveData[i+11] == maogonghuishi[i])
+        {
+          count++;          
+          }       
+        } 
+    if(count==16)
+      {
+        if(!status[10]) return;
+        status[10] = false;  
+        dump_byte_array(yuyin_maogonghuishi, 7);
+        digitalWrite(LED, HIGH);//打开LED
+        delay(500);  //延时时间需要适当修改
+        digitalWrite(LED, LOW);
+        return;
+        }
+    
+    //激战腊子口
+    count = 0;
+    for (byte i = 0; i < 16; i++) {
+        if(ReceiveData[i+11] == jizhanlazikou[i])
+        {
+          count++;          
+          }       
+        } 
+    if(count==16)
+      {
+        if(!status[12]) return;
+        status[12] = false;
+        dump_byte_array(yuyin_jizhanlazikou, 7);
+        digitalWrite(LED, HIGH);//打开LED
+        delay(500);  //延时时间需要适当修改
+        digitalWrite(LED, LOW);
+        return;
+        }
+    
     if(isDetect){
       digitalWrite(LED, HIGH);
       delay(2000);  //亮灯500毫秒，延时时间需要适当修改
