@@ -26,6 +26,7 @@
 #include"yvyin.h"
 
 //TODO:猜想1,谁放最后谁不响
+//TODO:现在张艳蕊的车已经可以了
 SoftwareSerial softSerial1(5,4); //软串口 rx:5 tx:4
 
 //读卡器自动读数据模式
