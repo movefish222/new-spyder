@@ -111,7 +111,6 @@ void setup()
 void loop() 
 {  
    bool isDetect = false;
-   digitalWrite(13, HIGH);
    byte ReceiveData[18]; // 接收数据数组
    //byte size = sizeof(ReceiveData);
    byte count = 0;
@@ -121,6 +120,7 @@ void loop()
   if(softSerial1.available()>0)
   { 
     isDetect = true;
+    digitalWrite(13, HIGH);//打开板载led灯
     memset(ReceiveData, 0, sizeof(ReceiveData));
     byte IndexMark = 0;
     //Serial.println(IndexMark);
@@ -131,7 +131,8 @@ void loop()
       IndexMark++;
     }
   }
-
+    digitalWrite(13, LOW);//关闭板载LED
+    if(!isDetect) return;
     //判断从标签里读到的信息是什么
     //瑞金
     count = 0;
@@ -420,8 +421,7 @@ void loop()
       digitalWrite(LED, HIGH);
       delay(2000);  //亮灯500毫秒，延时时间需要适当修改
       digitalWrite(LED, LOW);//关闭LED 
-    }
-    digitalWrite(13, LOW); 
+    } 
 }
 
 /**
