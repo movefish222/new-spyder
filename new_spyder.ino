@@ -113,7 +113,7 @@ void loop()
    bool isDetect = false;
    digitalWrite(13, HIGH);
    byte ReceiveData[18]; // 接收数据数组
-   byte size = sizeof(ReceiveData);
+   //byte size = sizeof(ReceiveData);
    byte count = 0;
    memset(ReceiveData, 0, sizeof(ReceiveData));
 
