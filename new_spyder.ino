@@ -134,24 +134,7 @@ void loop()
     digitalWrite(13, LOW);//关闭板载LED
     if(!isDetect) return;
     //判断从标签里读到的信息是什么
-    //延安
-    count = 0;
-    for (byte i = 0; i < 16; i++) {
-        if(ReceiveData[i+11] == yanan[i])
-        {
-          count++;          
-          }      
-        }
-    if(count==16)
-      {
-        if(!status[15]) return;
-        status[15] = false;
-        dump_byte_array(yuyin_yanan, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
-        return;
-      }
+
     //瑞金
     count = 0;
     for (byte i = 0; i < 16; i++) {
