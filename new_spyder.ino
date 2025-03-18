@@ -22,11 +22,11 @@
  */
 #define LED 2   // LED引脚配置
 #include<SoftwareSerial.h>
-#include"yvyin.h"
 #include"duka.h"
+#include"yvyin.h"
 
-//TODO:省赛前git测试点
-
+//TODO:猜想1,谁放最后谁不响
+//TODO:现在张艳蕊的车已经可以了
 SoftwareSerial softSerial1(5,4); //软串口 rx:5 tx:4
 
 //读卡器自动读数据模式
@@ -111,9 +111,8 @@ void setup()
 void loop() 
 {  
    bool isDetect = false;
-   digitalWrite(13, HIGH);
    byte ReceiveData[18]; // 接收数据数组
-   byte size = sizeof(ReceiveData);
+   //byte size = sizeof(ReceiveData);
    byte count = 0;
    memset(ReceiveData, 0, sizeof(ReceiveData));
 
@@ -121,6 +120,7 @@ void loop()
   if(softSerial1.available()>0)
   { 
     isDetect = true;
+    digitalWrite(13, HIGH);//打开板载led灯
     memset(ReceiveData, 0, sizeof(ReceiveData));
     byte IndexMark = 0;
     //Serial.println(IndexMark);
@@ -131,7 +131,8 @@ void loop()
       IndexMark++;
     }
   }
-
+    digitalWrite(13, LOW);//关闭板载LED
+    if(!isDetect) return;
     //判断从标签里读到的信息是什么
     //延安
     count = 0;
@@ -206,7 +207,8 @@ void loop()
         delay(500);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
-        } 
+        }
+        
     //占领遵义
     count = 0;
     for (byte i = 0; i < 16; i++) {
@@ -297,30 +299,144 @@ void loop()
         digitalWrite(LED, LOW);
         return;
         }
-    // //会宁大会师
-    // count = 0;
-    // for (byte i = 0; i < 16; i++) {
-    //     if(ReceiveData[i+11] == huiningdahuishi[i])
-    //     {
-    //       count++;          
-    //       }       
-    //     } 
-    // if(count==16)
-    //   {
-    //     if(!status[13]) return;
-    //     status[13] = false;
-    //     dump_byte_array(yuyin_huiningdahuishi, 7);
-    //     digitalWrite(LED, HIGH);//打开LED
-    //     delay(500);  //延时时间需要适当修改
-    //     digitalWrite(LED, LOW);
-    //     return;
-    //     }    
+
+    //会宁大会师
+    count = 0;
+    for (byte i = 0; i < 16; i++) {
+        if(ReceiveData[i+11] == huiningdahuishi[i])
+        {
+          count++;          
+          }       
+        } 
+    if(count==16)
+      {
+        if(!status[13]) return;
+        status[13] = false;
+        dump_byte_array(yuyin_huiningdahuishi, 7);
+        digitalWrite(LED, HIGH);//打开LED
+        delay(500);  //延时时间需要适当修改
+        digitalWrite(LED, LOW);
+        return;
+        }
+
+    //延安
+    count = 0;
+    for (byte i = 0; i < 16; i++) {
+        if(ReceiveData[i+11] == yanan[i])
+        {
+          count++;          
+          }       
+        }
+    if(count==16)
+      {
+        if(!status[15]) return;
+        status[15] = false;
+        dump_byte_array(yuyin_yanan, 7);
+        digitalWrite(LED, HIGH);//打开LED
+        delay(500);  //延时时间需要适当修改
+        digitalWrite(LED, LOW);
+        return;
+      }
+      
+      //强渡乌江
+    count = 0;
+    for (byte i = 0; i < 16; i++) {
+        if(ReceiveData[i+11] == qiangduwujiang[i])
+        {
+          count++;          
+          }       
+        } 
+    if(count==16)
+      {
+        if(!status[3]) return;
+        status[3] = false;
+        dump_byte_array(yuyin_qiangduwujiang, 7);
+        digitalWrite(LED, HIGH);//打开LED
+        delay(500);  //延时时间需要适当修改
+        digitalWrite(LED, LOW);
+        return;
+        }
+    //四渡赤水
+    count = 0;
+    for (byte i = 0; i < 16; i++) {
+        if(ReceiveData[i+11] == siduchishui[i])
+        {
+          count++;          
+          }       
+        } 
+    if(count==16)
+      {
+        if(!status[5]) return;
+        status[5] = false;
+        dump_byte_array(yuyin_siduchishui, 7);
+        digitalWrite(LED, HIGH);//打开LED
+        delay(500);  //延时时间需要适当修改
+        digitalWrite(LED, LOW);
+        return;
+        }
+            
+    //强渡大渡河
+    count = 0;
+    for (byte i = 0; i < 16; i++) {
+        if(ReceiveData[i+11] == qiangdudaduhe[i])
+        {
+          count++;          
+          }       
+        } 
+    if(count==16)
+      {
+        if(!status[7]) return;
+        status[7] = false;
+        dump_byte_array(yuyin_qiangdudaduhe, 7);
+        digitalWrite(LED, HIGH);//打开LED
+        delay(500);  //延时时间需要适当修改
+        digitalWrite(LED, LOW);
+        return;
+        }
+    
+    //懋功会师
+    count = 0;
+    for (byte i = 0; i < 16; i++) {
+        if(ReceiveData[i+11] == maogonghuishi[i])
+        {
+          count++;          
+          }       
+        } 
+    if(count==16)
+      {
+        if(!status[10]) return;
+        status[10] = false;  
+        dump_byte_array(yuyin_maogonghuishi, 7);
+        digitalWrite(LED, HIGH);//打开LED
+        delay(500);  //延时时间需要适当修改
+        digitalWrite(LED, LOW);
+        return;
+        }
+    
+    //激战腊子口
+    count = 0;
+    for (byte i = 0; i < 16; i++) {
+        if(ReceiveData[i+11] == jizhanlazikou[i])
+        {
+          count++;          
+          }       
+        } 
+    if(count==16)
+      {
+        if(!status[12]) return;
+        status[12] = false;
+        dump_byte_array(yuyin_jizhanlazikou, 7);
+        digitalWrite(LED, HIGH);//打开LED
+        delay(500);  //延时时间需要适当修改
+        digitalWrite(LED, LOW);
+        return;
+        }
+    
     if(isDetect){
       digitalWrite(LED, HIGH);
       delay(2000);  //亮灯500毫秒，延时时间需要适当修改
       digitalWrite(LED, LOW);//关闭LED 
-    }
-    digitalWrite(13, LOW); 
+    } 
 }
 
 /**
