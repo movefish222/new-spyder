@@ -53,7 +53,7 @@ byte yuyin_voiceSetting[] = {
  * 初始化函数
  */
 const int IN1 = 9, IN2 = 10, STBY = 11, PWM = 8;
-bool status[16];
+bool status[20];
 void setup() 
 {
     for(int i = 0; i < 16; i++){
@@ -70,7 +70,7 @@ void setup()
     //while (!Serial);    // 等待打开串口
     
    //初始化软串口通信；
-   softSerial1.begin(9600);     
+   softSerial1.begin(115200);     
    //监听软串口通信
    softSerial1.listen();
    delay(30);
@@ -134,6 +134,24 @@ void loop()
     digitalWrite(13, LOW);//关闭板载LED
     if(!isDetect) return;
     //判断从标签里读到的信息是什么
+    //延安
+    count = 0;
+    for (byte i = 0; i < 16; i++) {
+        if(ReceiveData[i+11] == yanan[i])
+        {
+          count++;          
+          }      
+        }
+    if(count==16)
+      {
+        if(!status[15]) return;
+        status[15] = false;
+        dump_byte_array(yuyin_yanan, 7);
+        digitalWrite(LED, HIGH);//打开LED
+        delay(500);  //延时时间需要适当修改
+        digitalWrite(LED, LOW);
+        return;
+      }
     //瑞金
     count = 0;
     for (byte i = 0; i < 16; i++) {
@@ -227,7 +245,6 @@ void loop()
         digitalWrite(LED, LOW);
         return;
         }
-
     //飞夺泸定桥
     count = 0;
     for (byte i = 0; i < 16; i++) {
@@ -246,7 +263,6 @@ void loop()
         digitalWrite(LED, LOW);
         return;
         }
-
     //爬雪山
     count = 0;
     for (byte i = 0; i < 16; i++) {
@@ -265,7 +281,6 @@ void loop()
         digitalWrite(LED, LOW);
         return;
         }
-
     //过草地
     count = 0;
     for (byte i = 0; i < 16; i++) {
