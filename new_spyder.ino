@@ -70,7 +70,7 @@ void setup()
     //while (!Serial);    // 等待打开串口
     
    //初始化软串口通信；
-   softSerial1.begin(9600);     
+   softSerial1.begin(115200);     
    //监听软串口通信
    softSerial1.listen();
    delay(30);
