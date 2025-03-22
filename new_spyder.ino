@@ -1,25 +1,3 @@
-/**
- * 淘宝店铺：蜘蛛电子
- * https://zhizhudianzi.taobao.com
- * 版权所有 未经允许 禁止传播
- * 
- * 装置接线说明:
- * --------------------- 
- * 读卡器      Arduino
- * --------------------- 
- * 5V           5V
- * GND          GND
- * RXD          D4 
- * TXD          D5  
- * 
- * --------------------- 
- * 喇叭         Arduino
- * --------------------- 
- * 5V           5V
- * GND          GND
- * RXD          TX 
- * TXD          RX 
- */
 #define LED 2   // LED引脚配置
 #include<SoftwareSerial.h>
 #include"duka.h"
