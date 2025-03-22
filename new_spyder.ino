@@ -48,7 +48,7 @@ void setup()
     //while (!Serial);    // 等待打开串口
     
    //初始化软串口通信；
-   softSerial1.begin(9600);     
+   softSerial1.begin(115200);     
    //监听软串口通信
    softSerial1.listen();
    delay(30);
@@ -127,7 +127,7 @@ void loop()
         status[0] = false; 
         dump_byte_array(yuyin_ruijin, 7);
         digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
+        delay(1000);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
         }
@@ -146,7 +146,7 @@ void loop()
         status[1] = false;
         dump_byte_array(yuyin_tupodisandaofangxian, 7);
         digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
+        delay(1000);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
         }
@@ -165,7 +165,7 @@ void loop()
         status[2] = false;
         dump_byte_array(yuyin_xuezhanxiangjiang, 7);
         digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
+        delay(1000);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
         }
@@ -184,7 +184,7 @@ void loop()
         status[4] = false;
         dump_byte_array(yuyin_zhanlingzunyi, 7);
         digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
+        delay(1000);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
         }
@@ -203,7 +203,7 @@ void loop()
         status[7] = false;
         dump_byte_array(yuyin_qiangdudaduhe, 7);
         digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
+        delay(1000);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
         }
@@ -222,7 +222,7 @@ void loop()
         status[6] = false;
         dump_byte_array(yuyin_qiaodujinshajiang, 7);
         digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
+        delay(1000);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
         }
@@ -240,7 +240,7 @@ void loop()
         status[8] = false;
         dump_byte_array(yuyin_feiduoludingqiao, 7);
         digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
+        delay(1000);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
         }
@@ -258,7 +258,7 @@ void loop()
         status[9] = false;
         dump_byte_array(yuyin_paxueshan, 7);
         digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
+        delay(1000);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
         }
@@ -276,7 +276,7 @@ void loop()
         status[11] = false;
         dump_byte_array(yuyin_guocaodi, 7);
         digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
+        delay(1000);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
         }
@@ -295,7 +295,7 @@ void loop()
         status[13] = false;
         dump_byte_array(yuyin_huiningdahuishi, 7);
         digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
+        delay(1000);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
         }
@@ -314,7 +314,7 @@ void loop()
         status[15] = false;
         dump_byte_array(yuyin_yanan, 7);
         digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
+        delay(1000);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
       }
@@ -333,7 +333,7 @@ void loop()
         status[3] = false;
         dump_byte_array(yuyin_qiangduwujiang, 7);
         digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
+        delay(1000);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
         }
@@ -351,7 +351,7 @@ void loop()
         status[5] = false;
         dump_byte_array(yuyin_siduchishui, 7);
         digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
+        delay(1000);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
         }
@@ -370,7 +370,7 @@ void loop()
         status[10] = false;  
         dump_byte_array(yuyin_maogonghuishi, 7);
         digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
+        delay(1000);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
         }
@@ -389,14 +389,14 @@ void loop()
         status[12] = false;
         dump_byte_array(yuyin_jizhanlazikou, 7);
         digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
+        delay(1000);  //延时时间需要适当修改
         digitalWrite(LED, LOW);
         return;
         }
     
     if(isDetect){
       digitalWrite(LED, HIGH);
-      delay(2000);  //亮灯500毫秒，延时时间需要适当修改
+      delay(2000);  //亮灯1000毫秒，延时时间需要适当修改
       digitalWrite(LED, LOW);//关闭LED 
     } 
 }
