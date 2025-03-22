@@ -188,6 +188,26 @@ void loop()
         digitalWrite(LED, LOW);
         return;
         }
+
+    //强渡大渡河
+    count = 0;
+    for (byte i = 0; i < 16; i++) {
+        if(ReceiveData[i+11] == qiangdudaduhe[i])
+        {
+          count++;          
+          }       
+        } 
+    if(count==16)
+      {
+        if(!status[7]) return;
+        status[7] = false;
+        dump_byte_array(yuyin_qiangdudaduhe, 7);
+        digitalWrite(LED, HIGH);//打开LED
+        delay(500);  //延时时间需要适当修改
+        digitalWrite(LED, LOW);
+        return;
+        }
+    
     //巧渡金沙江
     count = 0;
     for (byte i = 0; i < 16; i++) {
@@ -336,25 +356,6 @@ void loop()
         return;
         }
             
-    //强渡大渡河
-    count = 0;
-    for (byte i = 0; i < 16; i++) {
-        if(ReceiveData[i+11] == qiangdudaduhe[i])
-        {
-          count++;          
-          }       
-        } 
-    if(count==16)
-      {
-        if(!status[7]) return;
-        status[7] = false;
-        dump_byte_array(yuyin_qiangdudaduhe, 7);
-        digitalWrite(LED, HIGH);//打开LED
-        delay(500);  //延时时间需要适当修改
-        digitalWrite(LED, LOW);
-        return;
-        }
-    
     //懋功会师
     count = 0;
     for (byte i = 0; i < 16; i++) {
