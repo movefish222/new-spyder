@@ -85,7 +85,8 @@ void setup()
 /**
  * Main主循环函数
  */
- 
+
+byte LastReceive[18];
 void loop() 
 {  
    bool isDetect = false;
@@ -111,15 +112,17 @@ void loop()
   }
     digitalWrite(13, LOW);//关闭板载LED
     if(!isDetect) return;
-    //判断从标签里读到的信息是什么
 
-    Serial.println(ReceiveData);
+    if(!memcmp(LastReceive, ReceiveData, sizeof(ReceiveData))){
+      Serial.println(ReceiveData);
+    }
     
     if(isDetect){
       digitalWrite(LED, HIGH);
       delay(2000);  //亮灯1000毫秒，延时时间需要适当修改
       digitalWrite(LED, LOW);//关闭LED 
-    } 
+    }
+    memcpy(LastReceive, ReceiveData, sizeof(ReceiveData));
 }
 
 /**
