@@ -86,11 +86,11 @@ void setup()
  * Main主循环函数
  */
 
-byte LastReceive[18];
+char LastReceive[18];
 void loop() 
 {  
    bool isDetect = false;
-   byte ReceiveData[18]; // 接收数据数组
+   char ReceiveData[18]; // 接收数据数组
    //byte size = sizeof(ReceiveData);
    byte count = 0;
    memset(ReceiveData, 0, sizeof(ReceiveData));
@@ -129,7 +129,7 @@ void loop()
  * hex array output
  * 发送到语音模块
  */
-void dump_byte_array(byte *buffer, byte bufferSize) {
+void dump_byte_array(char *buffer, byte bufferSize) {
     for (byte i = 0; i < bufferSize; i++) {
         Serial.write(buffer[i]);
     }
