@@ -215,7 +215,7 @@ void loop()
         {
           count++;          
           }       
-        } 
+        }
     if(count==16)
       {
         if(!status[6]) return;
