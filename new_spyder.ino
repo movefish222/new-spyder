@@ -1,7 +1,7 @@
 #define LED 2   // LED引脚配置
 #include<SoftwareSerial.h>
-#include"duka.h"
-#include"yvyin.h"
+// #include"duka.h"
+// #include"yvyin.h"
 
 //TODO:猜想1,谁放最后谁不响
 //TODO:现在张艳蕊的车已经可以了
@@ -125,15 +125,15 @@ void loop()
     memcpy(LastReceive, ReceiveData, sizeof(ReceiveData));
 }
 
-/**
- * hex array output
- * 发送到语音模块
- */
-void dump_byte_array(byte *buffer, byte bufferSize) {
-    for (byte i = 0; i < bufferSize; i++) {
-        Serial.write(buffer[i]);
-    }
-}
+// /**
+//  * hex array output
+//  * 发送到语音模块
+//  */
+// void dump_byte_array(byte *buffer, byte bufferSize) {
+//     for (byte i = 0; i < bufferSize; i++) {
+//         Serial.write(buffer[i]);
+//     }
+// }
 
 /**
  * serial 1 hex array output
