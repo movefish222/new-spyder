@@ -114,7 +114,7 @@ void loop()
     if(!isDetect) return;
 
     if(memcmp(LastReceive, ReceiveData, sizeof(ReceiveData)) != 0){
-      Serial.println(ReceiveData);
+      dump_byte_array(ReceiveData, sizeof(ReceiveData))
     }
     
     if(isDetect){
@@ -125,15 +125,15 @@ void loop()
     memcpy(LastReceive, ReceiveData, sizeof(ReceiveData));
 }
 
-// /**
-//  * hex array output
-//  * 发送到语音模块
-//  */
-// void dump_byte_array(byte *buffer, byte bufferSize) {
-//     for (byte i = 0; i < bufferSize; i++) {
-//         Serial.write(buffer[i]);
-//     }
-// }
+/**
+ * hex array output
+ * 发送到语音模块
+ */
+void dump_byte_array(byte *buffer, byte bufferSize) {
+    for (byte i = 0; i < bufferSize; i++) {
+        Serial.write(buffer[i]);
+    }
+}
 
 /**
  * serial 1 hex array output
