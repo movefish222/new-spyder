@@ -113,7 +113,7 @@ void loop()
     digitalWrite(13, LOW);//关闭板载LED
     if(!isDetect) return;
 
-    if(!memcmp(LastReceive, ReceiveData, sizeof(ReceiveData))){
+    if(memcmp(LastReceive, ReceiveData, sizeof(ReceiveData)) != 0){
       Serial.println(ReceiveData);
     }
     
