@@ -114,7 +114,7 @@ void loop()
     if(!isDetect) return;
 
     if(memcmp(LastReceive, ReceiveData, sizeof(ReceiveData)) != 0){
-      dump_byte_array(ReceiveData, sizeof(ReceiveData))
+      dump_byte_array(ReceiveData, sizeof(ReceiveData));
     }
     
     if(isDetect){
