@@ -123,7 +123,7 @@ void loop()
 //       digitalWrite(LED, LOW);//关闭LED 
 //     }
 //     memcpy(LastReceive, ReceiveData, sizeof(ReceiveData));
-// }
+}
 
 /**
  * hex array output
