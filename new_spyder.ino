@@ -111,7 +111,7 @@ void loop()
   }
     digitalWrite(13, LOW);//关闭板载LED
     if(!isDetect) return;
-    //Serial.println(IndexMark);
+    Serial.println(ReceiveData);
     dump_byte_array(ReceiveData, sizeof(ReceiveData));
 //     if(memcmp(LastReceive, ReceiveData, sizeof(ReceiveData)) != 0){
 //       dump_byte_array(ReceiveData, sizeof(ReceiveData));
