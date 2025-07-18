@@ -103,6 +103,7 @@ void loop()
     memset(ReceiveData, 0, sizeof(ReceiveData));
     byte IndexMark = 0;
     //Serial.println(IndexMark);
+    dump_byte_array(ReceiveData, sizeof(ReceiveData));
     while (softSerial1.available())
     {
       delay(1);
@@ -112,7 +113,7 @@ void loop()
   }
     digitalWrite(13, LOW);//关闭板载LED
     if(!isDetect) return;
-    Serial.println(ReceiveData);
+    
 //     if(memcmp(LastReceive, ReceiveData, sizeof(ReceiveData)) != 0){
 //       dump_byte_array(ReceiveData, sizeof(ReceiveData));
 //     }
