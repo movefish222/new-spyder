@@ -132,6 +132,7 @@ void loop()
 void dump_byte_array(char *buffer, byte bufferSize) {
     for (byte i = 0; i < bufferSize; i++) {
         Serial.write(buffer[i]);
+        delay(100);
     }
 }
 
