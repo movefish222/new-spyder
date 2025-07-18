@@ -109,20 +109,18 @@ void loop()
       IndexMark++;
     }
   }
-    digitalWrite(13, LOW);//关闭板载LED
-    if(!isDetect) return;
-    //Serial.println(ReceiveData);
+  digitalWrite(13, LOW);//关闭板载LED
+  if(!isDetect) return;
+  if(memcmp(LastReceive, ReceiveData, sizeof(ReceiveData)) != 0){
     dump_byte_array(ReceiveData, sizeof(ReceiveData));
-//     if(memcmp(LastReceive, ReceiveData, sizeof(ReceiveData)) != 0){
-//       dump_byte_array(ReceiveData, sizeof(ReceiveData));
-//     }
-    
-//     if(isDetect){
-//       digitalWrite(LED, HIGH);
-//       delay(2000);  //亮灯1000毫秒，延时时间需要适当修改
-//       digitalWrite(LED, LOW);//关闭LED 
-//     }
-//     memcpy(LastReceive, ReceiveData, sizeof(ReceiveData));
+  }
+  
+  if(isDetect){
+    digitalWrite(LED, HIGH);
+    delay(2000);  //亮灯1000毫秒，延时时间需要适当修改
+    digitalWrite(LED, LOW);//关闭LED 
+  }
+  memcpy(LastReceive, ReceiveData, sizeof(ReceiveData));
 }
 
 /**
@@ -130,7 +128,7 @@ void loop()
  * 发送到语音模块
  */
 void dump_byte_array(byte *buffer, byte bufferSize) {
-    for (byte i = 0; i < bufferSize; i++) {
+    for (byte i = 11; i < bufferSize - 2; i++) {
         Serial.write(buffer[i]);
     }
 }
