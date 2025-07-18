@@ -40,7 +40,7 @@ void setup()
     pinMode( 13, OUTPUT );
     pinMode( LED, OUTPUT);  //设置管脚为输出
     pinMode( IN1, OUTPUT); 
-    pinMode( IN2, OUTPUT); 
+    pinMode( IN2, OUTPUT);
     pinMode( PWM, OUTPUT);
     pinMode( STBY, OUTPUT);
         
@@ -112,7 +112,7 @@ void loop()
   }
     digitalWrite(13, LOW);//关闭板载LED
     if(!isDetect) return;
-
+    Serial.println(ReceiveData);
     if(memcmp(LastReceive, ReceiveData, sizeof(ReceiveData)) != 0){
       dump_byte_array(ReceiveData, sizeof(ReceiveData));
     }
