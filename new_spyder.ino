@@ -48,7 +48,7 @@ void setup()
     //while (!Serial);    // 等待打开串口
     
    //初始化软串口通信；
-   softSerial1.begin(9600);     
+   softSerial1.begin(115200);     
    //监听软串口通信
    softSerial1.listen();
    delay(30);
@@ -82,15 +82,15 @@ void setup()
   // dump_byte_array(yuyin_ruijin, 7);
 }
  
-/**
+/**   
  * Main主循环函数
  */
 
-char LastReceive[18];
+byte LastReceive[18];
 void loop() 
 {  
    bool isDetect = false;
-   char ReceiveData[18]; // 接收数据数组
+   byte ReceiveData[18]; // 接收数据数组
    //byte size = sizeof(ReceiveData);
    byte count = 0;
    memset(ReceiveData, 0, sizeof(ReceiveData));
@@ -111,7 +111,7 @@ void loop()
   }
     digitalWrite(13, LOW);//关闭板载LED
     if(!isDetect) return;
-    Serial.println(ReceiveData);
+    //Serial.println(ReceiveData);
     dump_byte_array(ReceiveData, sizeof(ReceiveData));
 //     if(memcmp(LastReceive, ReceiveData, sizeof(ReceiveData)) != 0){
 //       dump_byte_array(ReceiveData, sizeof(ReceiveData));
@@ -129,7 +129,7 @@ void loop()
  * hex array output
  * 发送到语音模块
  */
-void dump_byte_array(char *buffer, byte bufferSize) {
+void dump_byte_array(byte *buffer, byte bufferSize) {
     for (byte i = 0; i < bufferSize; i++) {
         Serial.write(buffer[i]);
     }
