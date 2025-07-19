@@ -127,7 +127,7 @@ void loop()
  * hex array output
  * 发送到语音模块
  */
-byte compare(void* buff1, void* buff2, byte bufferSize, byte begin){
+byte compare(byte* buff1, byte* buff2, byte bufferSize, byte begin){
   byte mark = 0, i = begin;
   while(buff1[i] != 0x00 && buff1[i] == buff2[i] && i < bufferSize){
     i++;
