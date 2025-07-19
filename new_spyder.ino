@@ -128,9 +128,11 @@ void loop()
  * 发送到语音模块
  */
 void dump_byte_array(byte *buffer) {
-    for (byte i = 11; i < 28; i++) {
-        Serial.write(buffer[i]);
-    }
+  byte i = 11;
+  while(buffer[i] != 0x00){
+    Serial.write(buffer[i]);
+    i++;
+  }
 }
 
 /**
