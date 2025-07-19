@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.cs": "csharp",
+        "cctype": "cpp",
+        "climits": "cpp",
+        "cmath": "cpp",
+        "cstdarg": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "limits": "cpp",
+        "type_traits": "cpp",
+        "typeinfo": "cpp"
+    }
+}

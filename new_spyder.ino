@@ -112,8 +112,8 @@ void loop()
   digitalWrite(13, LOW);//关闭板载LED
   if(!isDetect) return;
 
-  if(memcmp(LastReceive, ReceiveData, sizeof(ReceiveData)) == 0) return;
-  dump_byte_array(ReceiveData);
+  if(compare(LastReceive, ReceiveData, sizeof(ReceiveData), 11) != 0) return;
+  dump_byte_array(ReceiveData, sizeof(ReceiveData), 11);
 
   if(isDetect){
     digitalWrite(LED, HIGH);
@@ -127,9 +127,18 @@ void loop()
  * hex array output
  * 发送到语音模块
  */
-void dump_byte_array(byte *buffer) {
-  byte i = 11;
-  while(buffer[i] != 0x00){
+byte compare(void* buff1, void* buff2, byte bufferSize, byte begin){
+  byte mark = 0, i = begin;
+  while(buff1[i] != 0x00 && buff1[i] == buff2[i] && i < bufferSize){
+    i++;
+  }
+  mark = buff1[i] - buff2[i];
+  return mark;
+}
+
+ void dump_byte_array(byte *buffer, byte bufferSize, byte begin) {
+  byte i = begin;
+  while(buffer[i] != 0x00 && i < bufferSize){
     Serial.write(buffer[i]);
     i++;
   }
