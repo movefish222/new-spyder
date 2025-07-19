@@ -86,11 +86,11 @@ void setup()
  * Main主循环函数
  */
 
-byte LastReceive[18];
+byte LastReceive[30];
 void loop() 
 {  
    bool isDetect = false;
-   byte ReceiveData[18]; // 接收数据数组
+   byte ReceiveData[30]; // 接收数据数组
    //byte size = sizeof(ReceiveData);
    byte count = 0;
    memset(ReceiveData, 0, sizeof(ReceiveData));
