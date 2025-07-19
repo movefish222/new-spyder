@@ -111,10 +111,10 @@ void loop()
   }
   digitalWrite(13, LOW);//关闭板载LED
   if(!isDetect) return;
-  if(memcmp(LastReceive, ReceiveData, sizeof(ReceiveData)) != 0){
-    dump_byte_array(ReceiveData, sizeof(ReceiveData));
-  }
   
+  if(memcmp(LastReceive, ReceiveData, sizeof(ReceiveData)) == 0) return;
+  dump_byte_array(ReceiveData, sizeof(ReceiveData));
+
   if(isDetect){
     digitalWrite(LED, HIGH);
     delay(2000);  //亮灯1000毫秒，延时时间需要适当修改
