@@ -112,13 +112,15 @@ void loop()
   digitalWrite(13, LOW);//关闭板载LED
   if(!isDetect) return;
 
-  if(compare(LastReceive, ReceiveData, sizeof(ReceiveData), 11) != 0) return;
+  if(compare(LastReceive, ReceiveData, sizeof(ReceiveData), 11) > 1) return;
   dump_byte_array(ReceiveData, sizeof(ReceiveData), 11);
 
   if(isDetect){
     digitalWrite(LED, HIGH);
-    delay(2000);  //亮灯1000毫秒，延时时间需要适当修改
+    delay(1000);  //亮灯1000毫秒，延时时间需要适当修改
     digitalWrite(LED, LOW);//关闭LED 
+    //飞夺泸定爬雪山
+    delay(750);
   }
   memcpy(LastReceive, ReceiveData, sizeof(ReceiveData));
 }
@@ -127,16 +129,15 @@ void loop()
  * hex array output
  * 发送到语音模块
  */
-byte compare(byte* buff1, byte* buff2, byte bufferSize, byte begin){
-  byte mark = 0, i = begin;
-  while(buff1[i] != 0x00 && buff1[i] == buff2[i] && i < bufferSize){
+byte compare(const byte* buff1, const byte* buff2, byte bufferSize, byte begin){
+  byte i = begin;
+  while(buff2[i] != 0x00 && buff1[i] == buff2[i] && i < bufferSize){
     i++;
   }
-  mark = buff1[i] - buff2[i];
-  return mark;
+  return i - begin;
 }
 
- void dump_byte_array(byte *buffer, byte bufferSize, byte begin) {
+ void dump_byte_array(const byte *buffer, byte bufferSize, byte begin) {
   byte i = begin;
   while(buffer[i] != 0x00 && i < bufferSize){
     Serial.write(buffer[i]);
