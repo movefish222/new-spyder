@@ -117,7 +117,7 @@ void loop()
 
   if(isDetect){
     digitalWrite(LED, HIGH);
-    delay(1000);  //亮灯1000毫秒，延时时间需要适当修改
+    delay(500);  //亮灯1000毫秒，延时时间需要适当修改
     digitalWrite(LED, LOW);//关闭LED 
     //飞夺泸定爬雪山
     delay(750);
